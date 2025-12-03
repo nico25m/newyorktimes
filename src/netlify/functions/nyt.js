@@ -9,8 +9,7 @@ export async function handler() {
         statusCode: response.status,
         body: JSON.stringify({ error: "NYT API error" }),
       };
-    }
-
+    } 
     const data = await response.json();
 
     return {

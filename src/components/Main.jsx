@@ -13,7 +13,7 @@ function Main() {
 
     } catch (error) {
       console.error("Errore durante il fetch:", error);
-    }
+    } 
   }
 
   return (
