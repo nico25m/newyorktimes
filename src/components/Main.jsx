@@ -5,15 +5,10 @@ function Main() {
 
   async function getNews() {
     try {
-      const response = await fetch(
-        "https://api.nytimes.com/svc/archive/v1/2024/1.json?api-key=9Uno3dLRvjqjGCdGhqv7A4FycXdrHnHE"
-      );
-
+      const response = await fetch("/.netlify/functions/nyt");
       const data = await response.json();
 
       const articles = data.response.docs;
-
-      // Prendiamo solo le prime 20 per non far esplodere tutto
       setNews(articles.slice(0, 20));
 
     } catch (error) {
