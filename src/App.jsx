@@ -1,9 +1,16 @@
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Main from "./components/Main";
+import AsideRight from "./components/Aside-right";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
-      <h1>New York Times</h1>
+    <div className="app">
+      <Navbar />
+      <Main />
+      <AsideRight />
+      <Footer />
     </div>
   );
 }
