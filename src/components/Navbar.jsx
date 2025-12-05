@@ -11,17 +11,25 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <p className="data">{dataAggiornata}</p>
-      <a href="http://localhost:3000" className="title-link">
-        <img
-          src={TheNewYorkTimes}
-          alt="The New York Times Logo"
-          className="title-logo"
-        />
-      </a>
-      <div className="container-btn">
-        <button className="subscribe btn">Subscribe</button>
-        <button className="login btn">Log in</button>
+      <div className="container">
+        <p className="data">{dataAggiornata}</p>
+        <a href="http://localhost:3000" className="title-link">
+          <img
+            src={TheNewYorkTimes}
+            alt="The New York Times Logo"
+            className="title-logo"
+          />
+        </a>
+        <div className="container-btn">
+          <button className="subscribe btn">Subscribe</button>
+          <button className="login btn">Log in</button>
+        </div>
+      </div>
+      <div className="menu">
+        <a className="link-menu" href="#news">News</a>
+        <a className="link-menu" href="#news">News</a>
+        <a className="link-menu" href="#news">News</a>
+        <a className="link-menu" href="#news">News</a>
       </div>
     </div>
   );
