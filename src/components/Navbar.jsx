@@ -1,4 +1,5 @@
 import TheNewYorkTimes from "../img/TheNewYorkTimesLogo.svg";
+import burger from "../img/burger.png";
 
 function Navbar() {
   const today = new Date();
@@ -12,7 +13,12 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="container">
-        <p className="data">{dataAggiornata}</p>
+        <div className="menu-data">
+          <button className="burger-btn" type="button">
+            <img className="burger-menu" src={burger} alt=" " />
+          </button>
+          <p className="data">{dataAggiornata}</p>
+          </div>
         <a href="App" className="title-link">
           <img
             src={TheNewYorkTimes}
@@ -20,10 +26,7 @@ function Navbar() {
             className="title-logo"
           />
         </a>
-        <div className="container-btn">
-          <button className="subscribe btn">Subscribe for €0.50/week</button>
           <button className="login btn">Log in</button>
-        </div>
       </div>
       <div className="menu">
         <a className="link-menu" href=" ">U.S.</a>

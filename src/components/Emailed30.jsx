@@ -13,7 +13,7 @@ function Emailed30() {
 
       const emailed = data.results;
 
-      setEmailed(emailed.slice(0, 5));
+      setEmailed(emailed.slice(0, 6));
     } catch (error) {
       console.error(error);
     }

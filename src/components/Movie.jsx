@@ -29,7 +29,7 @@ function Movie() {
           {movie.map((movie) => (
             <div className="item" key={movie._id}>
               <h3 className="h">{movie.headline.main || "Headline not avaible"}</h3>
-              <p className="description">{movie.snippet || "Snippet not available"}</p>
+              <p className="description">{movie.snippet || "Snippet not available"}</p>   
               <p className="credit">{movie.multimedia.credit || "Credit not available"}</p>
             </div>
           ))}

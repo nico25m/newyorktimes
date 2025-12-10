@@ -6,7 +6,6 @@ function Footer() {
       <img className="footer-logo" src={TheNewYorkTimes} alt=" " />
       <div className="container-foot">
         <div className="footer-menu">
-            
           <div className="news">
             <h4>NEWS</h4>
             <p>Home Page</p>
@@ -88,7 +87,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="container-1">
+        <div className="aside-footer">
           <h4>ACCOUNT</h4>
           <p>Subscribe</p>
           <p>Manage My Account</p>
@@ -96,7 +95,7 @@ function Footer() {
           <p>Gift Subscriptions</p>
         </div>
       </div>
-      <p className="copyright-footer">© 2025 The New York Times Company</p>
+      <p className="copyright-footer">© 2025 Nicolò Melzi</p>
     </div>
   );
 }

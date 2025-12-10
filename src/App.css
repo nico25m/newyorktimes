@@ -6,9 +6,9 @@
     "navbar navbar"
     "main aside-right"
     "footer footer";
-    padding-left: 15px;
-    padding-right: 15px;
-    height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: auto;
 }
 
 .navbar {
@@ -24,6 +24,14 @@
   margin-bottom: 15px;
 }
 
+.burger-btn {
+  display: none;
+}
+.title-logo {
+  max-width: 500px;
+  height: auto;
+  margin-right: 20px;
+}
 
 .container {
   display: flex;
@@ -41,6 +49,7 @@
   font-weight: 200;
   margin-bottom: -6px;
   max-width: 100%;
+  touch-action: none;
 }
 
 .link-menu {
@@ -50,7 +59,7 @@
 
 .link-menu:hover {
   text-decoration: underline 2px rgb(0, 0, 0);
-  text-underline-offset: 4px;  
+  text-underline-offset: 4px;
   color: rgb(0, 0, 0);
 }
 
@@ -61,12 +70,6 @@
 .title-logo {
   width: 500px;
   height: auto;
-}
-
-.container-btn {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
 }
 
 .btn {
@@ -96,31 +99,37 @@
   border-right: 1px solid rgb(201, 194, 194);
   margin-bottom: 15px;
   padding-right: 20px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   max-width: 100%;
 }
 
-.list{
+.list {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
 }
 
-.item{
+.item {
   border-bottom: 1px solid rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+  gap: 10px;
 }
 
-.h{
-  font-size: 25px;
+.h {
+  font-size: 23px;
+  margin: 0;
+  padding: 5px 0px;
+  font-family: cheltenham, georgia, "times new roman", times, serif;
 }
 
-.description{
+.description {
   font-size: 18px;
+  color: #525252;
+  margin: 0;
 }
 
-.credit{
+.credit {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10px;
   text-transform: uppercase;
@@ -131,49 +140,65 @@
   border-bottom: none;
 }
 
-.emailed7 .list{
+.emailed7 .list {
   border-bottom: 1px solid rgb(0, 0, 0);
   column-gap: 40px;
-  row-gap: 20px;
-  }
+  row-gap: 10px;
+}
 
- .emailed7 img{
+.emailed7 img {
   object-fit: cover;
   height: auto;
   display: block;
+  max-width: 100%;
 }
 
 .aside-right {
   grid-area: aside-right;
   background-color: rgb(255, 255, 255);
   padding-left: 20px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   max-width: 100%;
 }
 
-.emailed .item{
+.emailed-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.emailed30 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.emailed .item {
   display: flex;
   flex-direction: column;
 }
 
-
-.h-emailed{
+.h-emailed {
   font-size: 20px;
 }
 
-.description-emailed{
-  font-size: 16px;
-  margin-top: -5px;
+.img-emailed {
+  object-fit: cover;
+  height: auto;
+  display: block;
+  max-width: 100%;
 }
 
-.credit-emailed{
+.description-emailed {
+  font-size: 16px;
+  margin-top: -5px;
+  color: #525252;
+}
+
+.credit-emailed {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10px;
   text-transform: uppercase;
   color: #727272;
 }
-
-
 
 .footer {
   grid-area: footer;
@@ -186,7 +211,7 @@
 }
 
 .footer-logo {
-  width: 184px;
+  width: 200px;
   height: auto;
 }
 
@@ -201,17 +226,17 @@
 .footer-menu {
   display: flex;
   flex-direction: row;
-  gap: 150px;
+  gap: 130px;
   font-weight: bold;
   font-size: 13px;
 }
 
-.footer-menu p{
+.footer-menu p {
   font-size: 12px;
   font-weight: 400;
 }
 
-.container-1{
+.aside-footer {
   border-left: 1px solid rgb(201, 194, 194);
   display: flex;
   flex-direction: column;
@@ -221,13 +246,115 @@
   margin-bottom: 15px;
 }
 
-.container-1 p {
+.aside-footer p {
   font-size: large;
 }
 
 .copyright-footer {
   font-size: 11px;
   text-align: center;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "navbar"
+      "main"
+      "aside-right"
+      "footer";
+  }
+
+  .title-logo {
+    max-width: 400px;
+    margin-right: 20px;
+  }
+
+  .menu-data {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  .burger-btn {
+    width: 40px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    background-color: #ffffff;
+  }
+
+  .burger-menu {
+    display: flex;
+    width: 25px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .burger-menu:hover {
+    cursor: pointer;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .main {
+    border-right: none;
+  }
+
+  .list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .emailed .item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aside-right {
+    padding-left: 0;
+    display: grid;
+    height: auto;
+  }
+
+  .emailed30 {
+    display: grid;
+  }
+
+  .emailed-list {
+    column-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .h-emailed {
+    font-size: 23px;
+  }
+
+  .description-emailed {
+    font-size: 18px;
+  }
+
+  .container-foot {
+    flex-direction: column;
+  }
+
+  .aside-footer {
+    display: none;
+  }
+
+  .footer-menu {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer-menu p {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -241,7 +368,101 @@
       "footer";
   }
 
-  .list{
-  grid-template-columns: 1fr; 
-}
+
+
+  .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+   .menu-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .burger-btn {
+    width: 40px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    background-color: #ffffff;
+  }
+
+  .burger-menu {
+    display: flex;
+    width: 25px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title-logo {
+    max-width: 300px;
+    margin-right: 0px;
+  }
+
+  .data {
+    margin: 0;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .main {
+    border-right: none;
+  }
+
+  .list {
+    grid-template-columns: 1fr;
+  }
+
+  .emailed .item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aside-right {
+    padding-left: 0;
+    display: grid;
+    height: auto;
+  }
+
+  .emailed30 {
+    display: grid;
+  }
+
+  .emailed-list {
+    column-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .h-emailed {
+    font-size: 23px;
+  }
+
+  .description-emailed {
+    font-size: 18px;
+  }
+
+  .container-foot {
+    flex-direction: column;
+  }
+
+  .aside-footer {
+    display: none;
+  }
+
+  .footer-menu {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer-menu p {
+    display: none;
+  }
 }
