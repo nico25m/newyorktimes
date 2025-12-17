@@ -15,7 +15,7 @@ function Navbar() {
       <div className="container">
         <div className="menu-data">
           <button className="burger-btn" type="button">
-            <img className="burger-menu" src={burger} alt=" " />
+            <img className="burger-img" src={burger} alt=" " />
           </button>
           <p className="data">{dataAggiornata}</p>
           </div>

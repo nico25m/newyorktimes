@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# New York Times Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based front-end application that replicates the layout and feel of the New York Times website. It dynamically fetches and displays articles using the official New York Times API.
+
+## Features
+
+-   **Dynamic Content**: Fetches real-time article data from various New York Times API endpoints.
+-   **Categorized Sections**: Displays articles from different categories, including:
+    -   Movie-related articles
+    -   Election news
+    -   Most Emailed articles (over 7 and 30 days)
+-   **Responsive Design**: The layout adjusts for desktop, tablet, and mobile screen sizes, ensuring a consistent user experience across devices.
+-   **Component-Based Architecture**: Built with reusable React components for a modular and maintainable codebase.
+
+## Tech Stack
+
+-   **React**: A JavaScript library for building user interfaces.
+-   **JavaScript (ES6+)**: For application logic and API interaction.
+-   **CSS3**: For custom styling and responsive layout using Grid and Flexbox.
+-   **New York Times API**: Used to source article content, images, and metadata.
+
+## Project Structure
+
+The application is structured into several key components:
+
+-   `App.jsx`: The main component that assembles the overall page layout.
+-   `components/Navbar.jsx`: The top navigation bar, which includes the site logo, date, and menu links.
+-   `components/Main.jsx`: The primary content area, which aggregates various article sections.
+-   `components/Aside-right.jsx`: The right-hand sidebar content.
+-   `components/Footer.jsx`: The site footer with navigation links and copyright information.
+-   **Article Components** (`Movie.jsx`, `Election.jsx`, `Emailed7.jsx`, `Emailed30.jsx`): Individual components responsible for fetching and rendering articles from specific API endpoints.
+
+## Getting Started
+
+To run this project locally, follow these steps:
+
+### Prerequisites
+
+-   Node.js (v14 or later)
+-   npm or yarn
+-   A New York Times API Key. You can obtain one from the [NYT Developer Portal](https://developer.nytimes.com/).
+
+### Installation & Setup
+
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/nico25m/newyorktimes.git
+    cd newyorktimes
+    ```
+
+2.  **Install dependencies:**
+    ```sh
+    npm install
+    ```
+
+3.  **Configure API Key:**
+    The project uses a hardcoded API key for demonstration purposes. It is recommended to replace it with your own. Update the API key in the `fetch` calls within the following files:
+    -   `src/components/Election.jsx`
+    -   `src/components/Movie.jsx`
+    -   `src/components/Emailed7.jsx`
+    -   `src/components/Emailed30.jsx`
+
+    *Example (`src/components/Movie.jsx`):*
+    ```javascript
+    // Before
+    const response = await fetch(
+      "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=movie&api-key=9Uno3dLRvjqjGCdGhqv7A4FycXdrHnHE"
+    );
+
+    // After
+    const response = await fetch(
+      "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=movie&api-key=YOUR_API_KEY_HERE"
+    );
+    ```
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following commands:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Runs the app in development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will automatically reload when you make edits.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in interactive watch mode. This project uses React Testing Library for component testing.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This command removes the single build dependency from your project and copies all configuration files (webpack, Babel, ESLint, etc.) directly into your project, giving you full control over them.

@@ -274,6 +274,7 @@
   .menu-data {
     display: flex;
     flex-direction: column;
+    height: auto;
     gap: 70px;
   }
 
@@ -285,18 +286,15 @@
     flex-direction: column;
     border: none;
     background-color: #ffffff;
+    cursor: pointer;
   }
 
-  .burger-menu {
+  .burger-img {
     display: flex;
     width: 25px;
     height: 30px;
     justify-content: center;
     align-items: center;
-  }
-
-  .burger-menu:hover {
-    cursor: pointer;
   }
 
   .menu {
@@ -368,18 +366,17 @@
       "footer";
   }
 
-
-
   .container {
     flex-direction: column;
     gap: 10px;
   }
 
-   .menu-data {
+  .menu-data {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    width: 100%;
   }
 
   .burger-btn {
@@ -390,9 +387,10 @@
     flex-direction: column;
     border: none;
     background-color: #ffffff;
+    align-self: flex-start;
   }
 
-  .burger-menu {
+  .burger-img {
     display: flex;
     width: 25px;
     height: 30px;

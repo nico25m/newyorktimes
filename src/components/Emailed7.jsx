@@ -28,14 +28,25 @@ function Emailed() {
       <div className="emailed list">
         {emailed.map((emailed) => (
           <div className="emailed item" key={emailed._id}>
-            <h3 className="h emailed">{emailed.title || "Title not avaible"}</h3>
-            <p className="description emailed">{emailed.abstract || "Abstract not available"}</p>
+            <h3 className="h emailed">
+              {emailed.title || "Title not avaible"}
+            </h3>
+            <p className="description emailed">
+              {emailed.abstract || "Abstract not available"}
+            </p>
             <img
               className="img emailed"
-              src={emailed.media[0]["media-metadata"][1].url || ""}
-              alt={emailed.media[0].caption || "Description not available"}
+              src={
+                emailed.media?.[0]?.["media-metadata"]?.[1]?.url ||
+                emailed.media?.[0]?.["media-metadata"]?.[0]?.url ||
+                ""
+              }
+              alt={emailed.media?.[0]?.caption || "Description not available"}
+              title={emailed.media?.[0]?.caption || "Description not available"}
             />
-            <p className="credit emailed">{emailed.media[0].copyright || "Credit not available"}</p>
+            <p className="credit emailed">
+              {emailed.media?.[0]?.copyright || "Credit not available"}
+            </p>
           </div>
         ))}
       </div>
