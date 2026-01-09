@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import TheNewYorkTimes from "../img/TheNewYorkTimesLogo.svg";
 import burger from "../img/burger.png";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const today = new Date();
-  const dataAggiornata = today.toLocaleDateString("en-IT", {
+  const dataAggiornata = today.toLocaleDateString("en-EN", {
     weekday: "long",
-    month: "long",
     day: "numeric",
+    month: "long",
     year: "numeric",
   });
 
@@ -14,33 +18,60 @@ function Navbar() {
     <div className="navbar">
       <div className="container">
         <div className="menu-data">
-          <button className="burger-btn" type="button">
-            <img className="burger-img" src={burger} alt=" " />
+          <button
+            className="burger-btn"
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <img className="burger-img" src={burger} alt="menu" />
           </button>
+
           <p className="data">{dataAggiornata}</p>
-          </div>
-        <a href="App" className="title-link">
+        </div>
+
+        <a href="/" className="title-link">
           <img
             src={TheNewYorkTimes}
             alt="The New York Times Logo"
             className="title-logo"
           />
         </a>
-          <button className="login btn">Log in</button>
+
+        <button className="login btn">Log in</button>
       </div>
-      <div className="menu">
-        <a className="link-menu" href=" ">U.S.</a>
-        <a className="link-menu" href=" ">World</a>
-        <a className="link-menu" href=" ">Business</a>
-        <a className="link-menu" href=" ">Arts</a>
-        <a className="link-menu" href=" ">Lifestyle</a>
-        <a className="link-menu" href=" ">Opinion</a>
-        <a className="link-menu" href=" ">Video</a>
-        <a className="link-menu" href=" ">Audio</a>
-        <a className="link-menu" href=" ">Games</a>
-        <a className="link-menu" href=" ">Cooking</a>
-        <a className="link-menu" href=" ">Wirecutter</a>
-        <a className="link-menu" href=" ">The Athletic</a>
+
+      <div className={`menu ${menuOpen ? "open" : ""}`}>
+        <Link className="link-menu" to="/" onClick={() => setMenuOpen(false)}>
+          Home
+        </Link>
+        <Link
+          className="link-menu"
+          to="/news"
+          onClick={() => setMenuOpen(false)}
+        >
+          News
+        </Link>
+        <Link
+          className="link-menu"
+          to="/election"
+          onClick={() => setMenuOpen(false)}
+        >
+          Election
+        </Link>
+        <Link
+          className="link-menu"
+          to="/movie"
+          onClick={() => setMenuOpen(false)}
+        >
+          Movie
+        </Link>
+        <Link
+          className="link-menu"
+          to="/oldnews"
+          onClick={() => setMenuOpen(false)}
+        >
+          Old News
+        </Link>
       </div>
     </div>
   );

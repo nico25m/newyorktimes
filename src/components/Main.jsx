@@ -1,4 +1,4 @@
-import Movie from "./Movie";
+ import Movie from "./Movie";
 import Emailed7 from "./Emailed7";
 import Election from "./Election";
 
